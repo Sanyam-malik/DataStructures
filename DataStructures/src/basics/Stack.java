@@ -30,25 +30,36 @@ public class Stack<T> {
     }
 
     public T pop() {
-        if(this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST)){
-            T data = linkedList.get(peekIndex);
-            linkedList.remove(peekIndex);
-            peekIndex--;
-            return data;
-        } else {
-            T data = array.get(peekIndex);
-            array.remove(peekIndex);
-            peekIndex--;
-            return data;
+        if(!this.isEmpty()) {
+            if(this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST)){
+                T data = linkedList.get(peekIndex);
+                linkedList.remove(peekIndex);
+                peekIndex--;
+                return data;
+            } else {
+                T data = array.get(peekIndex);
+                array.remove(peekIndex);
+                peekIndex--;
+                return data;
+            }
         }
+        return null;
     }
 
     public T peek() {
-        if(this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST)){
-            return linkedList.get(peekIndex);
-        } else {
-            return array.get(peekIndex);
+        if(!this.isEmpty()) {
+            if(this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST)){
+                return linkedList.get(peekIndex);
+            } else {
+                return array.get(peekIndex);
+            }
         }
+        return null;
+    }
+
+    public boolean isEmpty() {
+        int size = this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST) ? linkedList.size() : array.size();
+        return size == 0 ? true : false;  
     }
 
     @Override

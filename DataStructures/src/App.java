@@ -2,6 +2,7 @@ import java.util.List;
 
 import basics.ArrayList;
 import basics.LinkedList;
+import basics.Queue;
 import basics.Stack;
 
 public class App {
@@ -32,8 +33,8 @@ public class App {
         System.out.println(ll);
 
 
-        System.out.println("Stack Using Array!");
-        Stack<String> stk1 = new Stack<String>();
+        System.out.println("Stack!");
+        Stack<String> stk1 = new Stack<String>(Stack.IMPLEMENT_LINKEDLIST);
         stk1.push("Arjun");
         stk1.push("Ridhi");
         stk1.push("Tanya");
@@ -43,16 +44,16 @@ public class App {
         System.out.println(stk1.peek());
         System.out.println(stk1);
 
-        System.out.println("Stack Using LinkedList!");
-        Stack<String> stk2 = new Stack<String>(Stack.IMPLEMENT_LINKEDLIST);
-        stk2.push("Arjun");
-        stk2.push("Ridhi");
-        stk2.push("Tanya");
-        stk2.push("Chiku");
-        System.out.println(stk2);
-        System.out.println(stk2.pop());
-        System.out.println(stk2.peek());
-        System.out.println(stk2);
 
+        System.out.println("Queue!");
+        Queue<String> que1 = new Queue<String>(Queue.IMPLEMENT_LINKEDLIST, Queue.TYPE_DOUBLE);
+        que1.offer("Arjun");
+        que1.offer("Ridhi");
+        que1.offer("Tanya");
+        que1.offer("Chiku");
+        System.out.println(que1);
+        System.out.println(que1.poll());
+        System.out.println(que1.peek());
+        System.out.println(que1);
     }
 }
