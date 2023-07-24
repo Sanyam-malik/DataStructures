@@ -125,8 +125,17 @@ public class Queue<T> {
     }
 
     public boolean isEmpty() {
-        int size = this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST) ? linkedList.size() : array.size();
+        int size = this.size();
         return size == 0 ? true : false;  
+    }
+
+    public int size() {
+        int size = this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST) ? linkedList.size() : array.size();
+        //For determining the actual size because elements are not deleted actually in double or circular queue
+        if((this.type.equalsIgnoreCase(TYPE_DOUBLE) || this.type.equalsIgnoreCase(TYPE_CIRCULAR)) && frontIndex > 0){
+            size = size - frontIndex;
+        }
+        return size;
     }
 
     @Override
