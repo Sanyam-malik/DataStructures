@@ -132,13 +132,13 @@ public class Queue<T> {
     public int size() {
         int size = this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST) ? linkedList.size() : array.size();
         //For determining the actual size because elements are not deleted actually in double or circular queue
-        if((this.type.equalsIgnoreCase(TYPE_DOUBLE) || this.type.equalsIgnoreCase(TYPE_CIRCULAR)) && frontIndex > 0){
+        if(this.type.equalsIgnoreCase(TYPE_DOUBLE) && frontIndex > 0){
             size = size - frontIndex;
         }
         return size;
     }
 
-    @Override
+    
     public String toString() {
         StringBuilder sb = new StringBuilder();
         int startIndex = this.implementation.equalsIgnoreCase(IMPLEMENT_LINKEDLIST) ? frontIndex : 0; 
