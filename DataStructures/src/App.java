@@ -1,13 +1,14 @@
 import java.util.List;
 
 import basics.ArrayList;
+import basics.BinarySearch;
 import basics.LinkedList;
 import basics.Queue;
 import basics.Stack;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("ArrayList!");
+       /*  System.out.println("ArrayList!");
         ArrayList<String> al = new ArrayList<String>();
         al.add("Arjun");
         al.add("Ridhi");
@@ -17,10 +18,10 @@ public class App {
         al.addAll(List.of("Slvia", "Ronald"));
         System.out.println(al);
         al.remove("Tanya");
-        System.out.println(al);
+        System.out.println(al); */
 
 
-        System.out.println("LinkedList!");
+        /* System.out.println("LinkedList!");
         LinkedList<String> ll = new LinkedList<String>();
         ll.add("Arjun");
         ll.add("Ridhi");
@@ -30,10 +31,10 @@ public class App {
         ll.addAll(List.of("Slvia", "Ronald"));
         System.out.println(ll);
         ll.remove("Tanya");
-        System.out.println(ll);
+        System.out.println(ll); */
 
 
-        System.out.println("Stack!");
+        /* System.out.println("Stack!");
         Stack<String> stk1 = new Stack<String>(Stack.IMPLEMENT_LINKEDLIST);
         stk1.push("Arjun");
         stk1.push("Ridhi");
@@ -42,10 +43,10 @@ public class App {
         System.out.println(stk1);
         System.out.println(stk1.pop());
         System.out.println(stk1.peek());
-        System.out.println(stk1);
+        System.out.println(stk1); */
 
 
-        System.out.println("Queue!");
+        /* System.out.println("Queue!");
         Queue<String> que1 = new Queue<String>(Queue.IMPLEMENT_LINKEDLIST, Queue.TYPE_DOUBLE);
         que1.offer("Arjun");
         que1.offer("Ridhi");
@@ -54,6 +55,21 @@ public class App {
         System.out.println(que1);
         System.out.println(que1.poll());
         System.out.println(que1.peek());
-        System.out.println(que1);
+        System.out.println(que1); */
+
+        System.out.println("BinarySearch!");
+        
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        al.addAll(List.of(22, 45, 10, 78));
+        al.sort();
+        System.out.println(al);
+        
+        BinarySearch<Integer> bSearch = new BinarySearch<>(al);
+        if(bSearch.contains(45) > -1) {
+            System.out.println("Element found");
+        } else {
+            System.out.println("Element not found");
+        }
+
     }
 }

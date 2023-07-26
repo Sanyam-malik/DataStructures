@@ -2,7 +2,7 @@ package basics;
 
 import java.util.List;
 
-public class LinkedList<T> {
+public class LinkedList<T> implements Collections<T> {
     
     Node head = null;
     
@@ -47,7 +47,7 @@ public class LinkedList<T> {
     }
 
     public void remove(T data){
-        if(head != null && this.contains(data)){
+        if(head != null && this.contains(data) > -1){
             if(head.data != data) {
                 Node prevNode = head;
                 while(prevNode.next != null) {
@@ -98,16 +98,18 @@ public class LinkedList<T> {
         return null;
     }
 
-    public boolean contains(T data){
+    public int contains(T data){
         Node currNode = head;
+        int iterator = 0;
         while(currNode != null) {
             if(currNode.data == data){
-                return true;
+                return iterator;
             } else {
                 currNode = currNode.next;
+                iterator++;
             }
         }
-        return false;
+        return -1;
     }
 
     public void clear(){
@@ -127,6 +129,11 @@ public class LinkedList<T> {
     @Override
     public String toString() {
         return head.toString();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return this.size() == 0 ? true : false;
     }
     
 }

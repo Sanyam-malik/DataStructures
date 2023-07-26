@@ -2,7 +2,7 @@ package basics;
 
 import java.util.List;
 
-public class ArrayList<T> {
+public class ArrayList<T> implements Collections<T> {
     
     private T array[];
     private int size;
@@ -38,19 +38,10 @@ public class ArrayList<T> {
     }
 
     public void remove(T data){
-        int index = getIndexOfElement(data);
+        int index = contains(data);
         if(index > -1){
             this.remove(index);
         }
-    }
-
-    private int getIndexOfElement(T data){
-        for(int index = 0; index < size; index++) {
-            if(data == array[index]) {
-                return index;
-            }
-        }
-        return -1;
     }
 
     public void remove(int index){
@@ -70,13 +61,13 @@ public class ArrayList<T> {
         }
     }
 
-    public boolean contains(T data){
+    public int contains(T data){
         for(int index = 0; index < size; index++) {
             if(data == array[index]) {
-                return true;
+                return index;
             }
         }
-        return false;
+        return -1;
     }
 
     public void clear(){
@@ -98,5 +89,10 @@ public class ArrayList<T> {
             }
         }
         return sb.toString();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return this.size() == 0 ? true : false;
     }
 }
