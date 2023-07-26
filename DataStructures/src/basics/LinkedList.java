@@ -97,6 +97,19 @@ public class LinkedList<T> implements Collections<T> {
         }
         return null;
     }
+    
+    public void set(int index, T value){
+        Node currNode = head;
+        int iterator = 0;
+        while(currNode != null) {
+            if(iterator == index){
+                currNode.data = value;
+            } else {
+                currNode = currNode.next;
+                iterator++;
+            }
+        }
+    }
 
     public int contains(T data){
         Node currNode = head;

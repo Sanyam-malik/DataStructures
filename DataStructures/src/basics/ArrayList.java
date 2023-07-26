@@ -61,6 +61,12 @@ public class ArrayList<T> implements Collections<T> {
         }
     }
 
+    public void set(int index, T value){
+        if(index < size){
+            array[index] = value;
+        }
+    }
+
     public int contains(T data){
         for(int index = 0; index < size; index++) {
             if(data == array[index]) {

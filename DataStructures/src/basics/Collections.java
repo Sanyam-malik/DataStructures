@@ -14,6 +14,8 @@ public interface Collections<T> {
 
     public T get(int index);
 
+    public void set(int index, T value);
+
     public int contains(T data);
 
     public int size();

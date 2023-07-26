@@ -2,8 +2,10 @@ import java.util.List;
 
 import basics.ArrayList;
 import basics.BinarySearch;
+import basics.BubbleSort;
 import basics.LinkedList;
 import basics.Queue;
+import basics.SelectionSort;
 import basics.Stack;
 
 public class App {
@@ -60,12 +62,15 @@ public class App {
         System.out.println("BinarySearch!");
         
         ArrayList<Integer> al = new ArrayList<Integer>();
-        al.addAll(List.of(22, 45, 10, 78));
-        al.sort();
+        al.addAll(List.of(22, 45, 10, 78, 32));
         System.out.println(al);
-        
-        BinarySearch<Integer> bSearch = new BinarySearch<>(al);
-        if(bSearch.contains(45) > -1) {
+
+        SelectionSort<Integer> bubbleSort = new SelectionSort<Integer>(al, SelectionSort.TYPE_DESCENDING);
+        bubbleSort.sort();
+        System.out.println(al);
+
+        BinarySearch<Integer> bSearch = new BinarySearch<>(al, BinarySearch.TYPE_DESCENDING);
+        if(bSearch.contains(78) > -1) {
             System.out.println("Element found");
         } else {
             System.out.println("Element not found");
