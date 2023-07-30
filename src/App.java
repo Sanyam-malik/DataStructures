@@ -4,6 +4,7 @@ import basics.ArrayList;
 import basics.BinarySearch;
 import basics.BubbleSort;
 import basics.LinkedList;
+import basics.MergeSort;
 import basics.Queue;
 import basics.SelectionSort;
 import basics.Stack;
@@ -59,14 +60,15 @@ public class App {
         System.out.println(que1.peek());
         System.out.println(que1); */
 
-        /* System.out.println("BinarySearch!");
+        /* System.out.println("Sorting!")
         ArrayList<Integer> al = new ArrayList<Integer>();
         al.addAll(List.of(22, 45, 10, 78, 32));
 
-        SelectionSort<Integer> bubbleSort = new SelectionSort<Integer>(al, SelectionSort.TYPE_DESCENDING);
-        bubbleSort.sort();
-        System.out.println(al);
+        MergeSort<Integer> mergeSort = new MergeSort<Integer>(al, SelectionSort.TYPE_DESCENDING);
+        mergeSort.sort();
+        System.out.println(al); */
 
+        /* System.out.println("BinarySearch!");
         BinarySearch<Integer> bSearch = new BinarySearch<>(al, BinarySearch.TYPE_DESCENDING);
         if(bSearch.contains(78) > -1) {
             System.out.println("Element found");
