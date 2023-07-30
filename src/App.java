@@ -59,11 +59,9 @@ public class App {
         System.out.println(que1.peek());
         System.out.println(que1); */
 
-        System.out.println("BinarySearch!");
-        
+        /* System.out.println("BinarySearch!");
         ArrayList<Integer> al = new ArrayList<Integer>();
         al.addAll(List.of(22, 45, 10, 78, 32));
-        System.out.println(al);
 
         SelectionSort<Integer> bubbleSort = new SelectionSort<Integer>(al, SelectionSort.TYPE_DESCENDING);
         bubbleSort.sort();
@@ -74,7 +72,7 @@ public class App {
             System.out.println("Element found");
         } else {
             System.out.println("Element not found");
-        }
+        } */
 
     }
 }
