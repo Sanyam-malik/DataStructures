@@ -17,10 +17,12 @@ public class Queue<T> {
 
     public Queue(){
         this.implementation = IMPLEMENT_ARRAY;
+        this.type = TYPE_SINGLE;
     }
 
     public Queue(String implementation){
         this.implementation = implementation;
+        this.type = TYPE_SINGLE;
     }
 
     public Queue(String implementation, String type){

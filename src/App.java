@@ -9,6 +9,7 @@ import basics.Queue;
 import basics.QuickSort;
 import basics.SelectionSort;
 import basics.Stack;
+import basics.Tree;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -61,13 +62,13 @@ public class App {
         System.out.println(que1.peek());
         System.out.println(que1); */
 
-        System.out.println("Sorting!");
+        /* System.out.println("Sorting!");
         ArrayList<Integer> al = new ArrayList<Integer>();
         al.addAll(List.of(22, 45, 10, 78, 32));
 
         QuickSort<Integer> mergeSort = new QuickSort<Integer>(al, SelectionSort.TYPE_DESCENDING);
         mergeSort.sort();
-        System.out.println(al);
+        System.out.println(al); */
 
         /* System.out.println("BinarySearch!");
         BinarySearch<Integer> bSearch = new BinarySearch<>(al, BinarySearch.TYPE_DESCENDING);
@@ -76,6 +77,13 @@ public class App {
         } else {
             System.out.println("Element not found");
         } */
+
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        al.addAll(List.of(1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1));
+        System.out.println("Tree!");
+        Tree<Integer> tree = new Tree<>();
+        tree.buildTree(al);
+        tree.traverseTree(Tree.TRAVERSE_TYPE_LEVELORDER);
 
     }
 }
