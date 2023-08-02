@@ -3,6 +3,7 @@ import java.util.List;
 import basics.ArrayList;
 import basics.BinarySearch;
 import basics.BubbleSort;
+import basics.HashTable;
 import basics.LinkedList;
 import basics.MergeSort;
 import basics.Queue;
@@ -78,12 +79,17 @@ public class App {
             System.out.println("Element not found");
         } */
 
-        ArrayList<Integer> al = new ArrayList<Integer>();
+        /* ArrayList<Integer> al = new ArrayList<Integer>();
         al.addAll(List.of(1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1));
         System.out.println("Tree!");
         Tree<Integer> tree = new Tree<>();
         tree.buildTree(al);
-        tree.traverseTree(Tree.TRAVERSE_TYPE_LEVELORDER);
+        tree.traverseTree(Tree.TRAVERSE_TYPE_LEVELORDER); */
 
+        /* HashTable<String, Integer> hashTable= new HashTable<>();
+        hashTable.put("Berlin", 20);
+        hashTable.put("New York", 290);
+        hashTable.remove("Berlin");
+        System.out.println(hashTable.entrySet()); */
     }
 }
