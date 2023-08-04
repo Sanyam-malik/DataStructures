@@ -8,6 +8,7 @@ public class ArrayList<T> implements Collections<T>, Iterable<T> {
     private T array[];
     private int size;
 
+    @SuppressWarnings("unchecked")
     public ArrayList() {
         array = (T[])new Object[10];
     }
@@ -24,6 +25,7 @@ public class ArrayList<T> implements Collections<T>, Iterable<T> {
         }
     }
 
+    @SuppressWarnings("unchecked")
     private void createNewArray(int size){
         T newArray[] = (T[])new Object[size];
         for(int index = 0 ; index <= array.length - 1 ; index++){
