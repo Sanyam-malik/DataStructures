@@ -2,23 +2,112 @@ package basics;
 
 public class Graph {
 
+    public static final String IMPLEMENT_BY_ADJACENCY_LIST = "adjacency_list";
+
+    public static final String IMPLEMENT_BY_ADJACENCY_MATRIX = "adjacency_matrix";
+
+    public static final String IMPLEMENT_BY_EDGE_LIST = "edge_list";
+
+    public static final String TYPE_WEIGHTED = "weighted";
+
+    public static final String TYPE_UNWEIGHTED = "unweighted";
+
+    public static final String GRAPH_DIRECTED = "directed";
+
+    public static final String GRAPH_UNDIRECTED = "undirected";
+
+    private String implementation;
+
+    private String graph;
+
+    private String type;
+
+    private int numVertices;
+
+    private AdjacencyMatrix ob1;
+    private AdjacencyList ob2;
+    private EdgeList ob3;
+
+    public Graph(int numVertices) {
+        this.implementation = IMPLEMENT_BY_ADJACENCY_LIST;
+        this.graph = GRAPH_UNDIRECTED;
+        this.type = TYPE_WEIGHTED;
+        this.numVertices = numVertices;
+        this.initGraph();
+    }
+
+    public Graph(String implementation, String graph, String type, int numVertices) {
+        this.implementation = implementation;
+        this.graph = graph;
+        this.type = type;
+        this.numVertices = numVertices;
+        this.initGraph();
+    }
+
+    public void addEdge(int src, int dest, int weight) {
+        if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
+            ob2.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : null);
+        } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
+            ob1.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : 1);
+        } else {
+            ob3.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : null);
+        }
+    }
+    
+    public void removeEdge(int src, int dest) {
+        if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
+            ob2.removeEdge(src, dest);
+        } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
+            ob1.removeEdge(src, dest);
+        } else {
+            ob3.removeEdge(src, dest);
+        }
+    }
+
+    public void printGraph() {
+        if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
+            ob2.printGraph();
+        } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
+            ob1.printGraph();
+        } else {
+            ob3.printGraph();
+        }
+    }
+
+    private void initGraph(){
+        if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
+            ob2 = new AdjacencyList(numVertices, graph);
+        } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
+            ob1 = new AdjacencyMatrix(numVertices, graph);   
+        } else {
+            ob3 = new EdgeList(graph);
+        }
+    }
+
+
     public class AdjacencyMatrix {
         private int[][] adjacencyMatrix;
         private int numVertices;
+        private String graph;
     
-        public AdjacencyMatrix(int numVertices) {
+        public AdjacencyMatrix(int numVertices, String graph) {
             this.numVertices = numVertices;
+            this.graph = graph;
             adjacencyMatrix = new int[numVertices][numVertices];
         }
     
         public void addEdge(int src, int dest, int weight) {
             adjacencyMatrix[src][dest] = weight;
-            adjacencyMatrix[dest][src] = weight; // For undirected graph
+            if(graph.equalsIgnoreCase(GRAPH_UNDIRECTED)){
+                adjacencyMatrix[dest][src] = weight; // For undirected graph
+            }
         }
     
         public void removeEdge(int src, int dest) {
             adjacencyMatrix[src][dest] = 0;
-            adjacencyMatrix[dest][src] = 0; // For undirected graph
+            if(graph.equalsIgnoreCase(GRAPH_UNDIRECTED)){
+                adjacencyMatrix[dest][src] = 0; // For undirected graph
+            }
         }
     
         public void printGraph() {
@@ -35,10 +124,11 @@ public class Graph {
     public class AdjacencyList {
         private ArrayList<LinkedList<Edge>> adjacencyList;
         private int numVertices;
-
+        private String graph;
+        
         public class Edge {
             int dest;
-            int weight;
+            Integer weight;
         
             public Edge(int dest, int weight) {
                 this.dest = dest;
@@ -46,18 +136,21 @@ public class Graph {
             }
         }
 
-        public AdjacencyList(int numVertices) {
+        public AdjacencyList(int numVertices, String graph) {
             this.numVertices = numVertices;
+            this.graph = graph;
             adjacencyList = new ArrayList<>();
             for (int i = 0; i < numVertices; i++) {
                 adjacencyList.add(new LinkedList<>());
             }
         }
 
-        public void addEdge(int src, int dest, int weight) {
+        public void addEdge(int src, int dest, Integer weight) {
             adjacencyList.get(src).add(new Edge(dest, weight));
-            // For undirected graph, add the reverse edge as well
-            adjacencyList.get(dest).add(new Edge(src, weight));
+            if(graph.equalsIgnoreCase(GRAPH_UNDIRECTED)) {
+                // For undirected graph, add the reverse edge as well
+                adjacencyList.get(dest).add(new Edge(src, weight));
+            }
         }
 
         public void removeEdge(int src, int dest) {
@@ -67,9 +160,12 @@ public class Graph {
                 }
             }
 
-            for(int index=0; index < adjacencyList.get(dest).size(); index++) {
-                if (adjacencyList.get(dest).get(index).dest == src) {
-                    adjacencyList.get(dest).remove(index);
+            if(graph.equalsIgnoreCase(GRAPH_UNDIRECTED)) {
+                // For undirected graph, add the reverse edge as well
+                for(int index=0; index < adjacencyList.get(dest).size(); index++) {
+                    if (adjacencyList.get(dest).get(index).dest == src) {
+                        adjacencyList.get(dest).remove(index);
+                    }
                 }
             }
         }
@@ -86,11 +182,13 @@ public class Graph {
     }
 
     public class EdgeList {
+        private ArrayList<Edge> edgeList;
+        private String graph;
 
         public class Edge {
             int src;
             int dest;
-            int weight;
+            Integer weight;
         
             public Edge(int src, int dest, int weight) {
                 this.src = src;
@@ -99,14 +197,16 @@ public class Graph {
             }
         }
 
-        private ArrayList<Edge> edgeList;
-        public EdgeList(int numVertices) {
+        public EdgeList(String graph) {
+            this.graph = graph;
             edgeList = new ArrayList<Edge>();
         }
 
-        public void addEdge(int src, int dest, int weight) {
+        public void addEdge(int src, int dest, Integer weight) {
             edgeList.add(new Edge(src, dest, weight));
-            edgeList.add(new Edge(dest, src, weight)); // For undirected graph
+            if(graph.equalsIgnoreCase(GRAPH_UNDIRECTED)){
+                edgeList.add(new Edge(dest, src, weight)); // For undirected graph
+            }
         }
 
         public void removeEdge(int src, int dest) {
@@ -115,9 +215,11 @@ public class Graph {
                 if(edge.src == src && edge.dest == dest) {
                     removedEdges.add(edgeList.contains(edge));
                 }
-                // For undirected graph
-                if(edge.src == dest && edge.dest == src) {
-                    removedEdges.add(edgeList.contains(edge));
+                if(graph.equalsIgnoreCase(GRAPH_UNDIRECTED)) {
+                    // For undirected graph
+                    if(edge.src == dest && edge.dest == src) {
+                        removedEdges.add(edgeList.contains(edge));
+                    }
                 }
             }
 
