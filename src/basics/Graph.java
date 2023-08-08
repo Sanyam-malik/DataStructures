@@ -47,21 +47,21 @@ public class Graph {
     public void addEdge(int src, int dest) {
         int weight = 0;
         if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
-            ob2.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : null);
+            ob2.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : 0);
         } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
             ob1.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : 1);
         } else {
-            ob3.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : null);
+            ob3.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : 0);
         }
     }
 
     public void addEdge(int src, int dest, int weight) {
         if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
-            ob2.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : null);
+            ob2.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : 0);
         } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
             ob1.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : 1);
         } else {
-            ob3.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : null);
+            ob3.addEdge(src, dest, this.type.equalsIgnoreCase(TYPE_WEIGHTED) ? weight : 0);
         }
     }
     
@@ -186,7 +186,6 @@ public class Graph {
                     if (!visited[dest]) {
                         visited[dest] = true;
                         stack.push(dest);
-                        break;
                     }
                 }
             }
@@ -297,7 +296,6 @@ public class Graph {
                     if (!visited[edge.dest]) {
                         visited[edge.dest] = true;
                         stack.push(edge.dest);
-                        break;
                     }
                 }
             }
@@ -410,7 +408,6 @@ public class Graph {
                     if (src == vertex && !visited[dest]) {
                         visited[dest] = true;
                         stack.push(dest);
-                        break;
                     }
                 }
             }

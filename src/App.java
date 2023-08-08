@@ -95,15 +95,43 @@ public class App {
         hashTable.remove("Berlin");
         System.out.println(hashTable.entrySet()); */
 
-        Graph graph = new Graph(5);
-        graph.addEdge(0, 1);
+        Graph graph = new Graph(Graph.IMPLEMENT_BY_ADJACENCY_LIST, Graph.GRAPH_DIRECTED, Graph.TYPE_UNWEIGHTED, 6);
+        /* graph.addEdge(0, 1);
+        graph.addEdge(0, 3);
         graph.addEdge(0, 4);
+        graph.addEdge(4, 5);
+        graph.addEdge(3, 5);
         graph.addEdge(1, 2);
+        graph.addEdge(1, 0);
+        graph.addEdge(2, 1);
+        graph.addEdge(4, 1);
+        graph.addEdge(3, 1);
+        graph.addEdge(5, 4);
+        graph.addEdge(5, 3); */
+
+        /*
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 2);
+        graph.addEdge(1, 0);
         graph.addEdge(1, 3);
-        graph.addEdge(1, 4);
+        graph.addEdge(2, 0);
         graph.addEdge(2, 3);
         graph.addEdge(3, 4);
+        graph.addEdge(3, 5);
+        graph.addEdge(4, 3);
+        graph.addEdge(5, 3);
         graph.printGraph();
         graph.dfs();
+        */
+
+        Graph g = new Graph(5);
+		
+		g.addEdge(1, 0);
+		g.addEdge(0, 2);
+		g.addEdge(2, 1);
+		g.addEdge(0, 3);
+		g.addEdge(1, 4);
+        g.printGraph();
+        g.dfs();
     }
 }
