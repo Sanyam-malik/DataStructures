@@ -63,13 +63,13 @@ public class App {
         System.out.println(que1.peek());
         System.out.println(que1); */
 
-        /* System.out.println("Sorting!");
+        System.out.println("Sorting!");
         ArrayList<Integer> al = new ArrayList<Integer>();
-        al.addAll(List.of(22, 45, 10, 78, 32));
+        al.addAll(List.of(23, 11, 60, 32, 41, 57, 34,78));
 
-        QuickSort<Integer> mergeSort = new QuickSort<Integer>(al, SelectionSort.TYPE_DESCENDING);
+        QuickSort<Integer> mergeSort = new QuickSort<Integer>(al, QuickSort.TYPE_ASCENDING);
         mergeSort.sort();
-        System.out.println(al); */
+        System.out.println(al);
 
         /* System.out.println("BinarySearch!");
         BinarySearch<Integer> bSearch = new BinarySearch<>(al, BinarySearch.TYPE_DESCENDING);
