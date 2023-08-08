@@ -3,6 +3,7 @@ import java.util.List;
 import basics.ArrayList;
 import basics.BinarySearch;
 import basics.BubbleSort;
+import basics.Graph;
 import basics.HashTable;
 import basics.LinkedList;
 import basics.MergeSort;
@@ -63,6 +64,7 @@ public class App {
         System.out.println(que1.peek());
         System.out.println(que1); */
 
+        /* 
         System.out.println("Sorting!");
         ArrayList<Integer> al = new ArrayList<Integer>();
         al.addAll(List.of(23, 11, 60, 32, 41, 57, 34,78));
@@ -70,6 +72,7 @@ public class App {
         QuickSort<Integer> mergeSort = new QuickSort<Integer>(al, QuickSort.TYPE_ASCENDING);
         mergeSort.sort();
         System.out.println(al);
+        */
 
         /* System.out.println("BinarySearch!");
         BinarySearch<Integer> bSearch = new BinarySearch<>(al, BinarySearch.TYPE_DESCENDING);
@@ -91,5 +94,16 @@ public class App {
         hashTable.put("New York", 290);
         hashTable.remove("Berlin");
         System.out.println(hashTable.entrySet()); */
+
+        Graph graph = new Graph(5);
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 4);
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 3);
+        graph.addEdge(1, 4);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 4);
+        graph.printGraph();
+        graph.dfs();
     }
 }
