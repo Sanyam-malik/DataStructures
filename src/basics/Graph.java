@@ -74,6 +74,26 @@ public class Graph {
         }
     }
 
+    public void bfs() {
+        if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
+            ob2.bfs();
+        } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
+            ob1.bfs();
+        } else {
+            ob3.bfs();
+        }
+    }
+
+    public void dfs() {
+        if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
+            ob2.dfs();
+        } else if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_MATRIX)){
+            ob1.dfs();
+        } else {
+            ob3.dfs();
+        }
+    }
+
     private void initGraph(){
         if(this.implementation.equalsIgnoreCase(IMPLEMENT_BY_ADJACENCY_LIST)){
             ob2 = new AdjacencyList(numVertices, graph);
@@ -108,6 +128,58 @@ public class Graph {
             if(graph.equalsIgnoreCase(GRAPH_UNDIRECTED)){
                 adjacencyMatrix[dest][src] = 0; // For undirected graph
             }
+        }
+
+        public void bfs() {
+            int startVertex = 0;
+            boolean[] visited = new boolean[numVertices]; // Tracks visited vertices
+            Queue<Integer> queue = new Queue<>();
+    
+            visited[startVertex] = true;
+            queue.offer(startVertex);
+    
+            System.out.print("BFS traversal starting from vertex " + startVertex + ": ");
+    
+            while (!queue.isEmpty()) {
+                int vertex = queue.poll();
+                System.out.print(vertex + " ");
+
+                for(int index=0;index<numVertices;index++) {
+                    int dest = adjacencyMatrix[vertex][index];
+                    if (!visited[dest]) {
+                        visited[dest] = true;
+                        queue.offer(dest);
+                    }
+                }
+            }
+    
+            System.out.println();
+        }
+
+        public void dfs() {
+            int startVertex = 0;
+            boolean[] visited = new boolean[numVertices]; // Tracks visited vertices
+            Stack<Integer> stack = new Stack<>();
+    
+            visited[startVertex] = true;
+            stack.push(startVertex);
+    
+            System.out.print("DFS traversal starting from vertex " + startVertex + ": ");
+    
+            while (!stack.isEmpty()) {
+                int vertex = stack.pop();
+                System.out.print(vertex + " ");
+    
+                for(int index=0;index<numVertices;index++) {
+                    int dest = adjacencyMatrix[vertex][index];
+                    if (!visited[dest]) {
+                        visited[dest] = true;
+                        stack.push(dest);
+                    }
+                }
+            }
+    
+            System.out.println();
         }
     
         public void printGraph() {
@@ -170,6 +242,56 @@ public class Graph {
             }
         }
 
+        public void bfs() {
+            int startVertex = 0;
+            boolean[] visited = new boolean[numVertices]; // Tracks visited vertices
+            Queue<Integer> queue = new Queue<>();
+    
+            visited[startVertex] = true;
+            queue.offer(startVertex);
+    
+            System.out.print("BFS traversal starting from vertex " + startVertex + ": ");
+    
+            while (!queue.isEmpty()) {
+                int vertex = queue.poll();
+                System.out.print(vertex + " ");
+    
+                for (Edge edge : adjacencyList.get(vertex)) {
+                    if (!visited[edge.dest]) {
+                        visited[edge.dest] = true;
+                        queue.offer(edge.dest);
+                    }
+                }
+            }
+    
+            System.out.println();
+        }
+
+        public void dfs() {
+            int startVertex = 0;
+            boolean[] visited = new boolean[numVertices]; // Tracks visited vertices
+            Stack<Integer> stack = new Stack<>();
+    
+            visited[startVertex] = true;
+            stack.push(startVertex);
+    
+            System.out.print("DFS traversal starting from vertex " + startVertex + ": ");
+    
+            while (!stack.isEmpty()) {
+                int vertex = stack.pop();
+                System.out.print(vertex + " ");
+    
+                for (Edge edge : adjacencyList.get(vertex)) {
+                    if (!visited[edge.dest]) {
+                        visited[edge.dest] = true;
+                        stack.push(edge.dest);
+                    }
+                }
+            }
+    
+            System.out.println();
+        }
+
         public void printGraph() {
             for (int i = 0; i < numVertices; i++) {
                 System.out.print("Vertex " + i + " is connected to: ");
@@ -228,6 +350,60 @@ public class Graph {
             }
         }
 
+        public void bfs() {
+            int startVertex = 0;
+            boolean[] visited = new boolean[numVertices]; // Tracks visited vertices
+            Queue<Integer> queue = new Queue<>();
+    
+            visited[startVertex] = true;
+            queue.offer(startVertex);
+    
+            System.out.print("BFS traversal starting from vertex " + startVertex + ": ");
+    
+            while (!queue.isEmpty()) {
+                int vertex = queue.poll();
+                System.out.print(vertex + " ");
+
+                for(Edge edge : edgeList){
+                    int src = edge.src;
+                    int dest = edge.dest;
+                    if (src == vertex && !visited[dest]) {
+                        visited[dest] = true;
+                        queue.offer(dest);
+                    }
+                }
+            }
+    
+            System.out.println();
+        }
+
+        public void dfs() {
+            int startVertex = 0;
+            boolean[] visited = new boolean[numVertices]; // Tracks visited vertices
+            Stack<Integer> stack = new Stack<>();
+    
+            visited[startVertex] = true;
+            stack.push(startVertex);
+    
+            System.out.print("DFS traversal starting from vertex " + startVertex + ": ");
+    
+            while (!stack.isEmpty()) {
+                int vertex = stack.pop();
+                System.out.print(vertex + " ");
+    
+                for(Edge edge : edgeList){
+                    int src = edge.src;
+                    int dest = edge.dest;
+                    if (src == vertex && !visited[dest]) {
+                        visited[dest] = true;
+                        stack.push(dest);
+                    }
+                }
+            }
+    
+            System.out.println();
+        }
+        
         public void printGraph() {
             for (Edge edge : edgeList) {
                 System.out.println("Edge from " + edge.src + " to " + edge.dest + " with weight " + edge.weight);
