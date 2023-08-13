@@ -2,6 +2,7 @@ import java.util.List;
 
 import basics.ArrayList;
 import basics.BinarySearch;
+import basics.BinarySearchTree;
 import basics.BubbleSort;
 import basics.Graph;
 import basics.HashTable;
@@ -95,8 +96,8 @@ public class App {
         hashTable.remove("Berlin");
         System.out.println(hashTable.entrySet()); */
 
-        Graph graph = new Graph(Graph.IMPLEMENT_BY_ADJACENCY_LIST, Graph.GRAPH_DIRECTED, Graph.TYPE_UNWEIGHTED, 6);
-        /* graph.addEdge(0, 1);
+        /* Graph graph = new Graph(Graph.IMPLEMENT_BY_ADJACENCY_LIST, Graph.GRAPH_DIRECTED, Graph.TYPE_UNWEIGHTED, 6);
+        graph.addEdge(0, 1);
         graph.addEdge(0, 3);
         graph.addEdge(0, 4);
         graph.addEdge(4, 5);
@@ -124,7 +125,7 @@ public class App {
         graph.dfs();
         */
 
-        Graph g = new Graph(5);
+       /*  Graph g = new Graph(5);
 		
 		g.addEdge(1, 0);
 		g.addEdge(0, 2);
@@ -132,6 +133,14 @@ public class App {
 		g.addEdge(0, 3);
 		g.addEdge(1, 4);
         g.printGraph();
-        g.dfs();
+        g.dfs(); */
+
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        al.addAll(List.of(5,1,3,4,2,7));
+        System.out.println("BinarySearchTree!");
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.buildTree(al);
+        tree.traverseTree(BinarySearchTree.TRAVERSE_TYPE_INORDER);
+        System.out.println(tree.search(5));
     }
 }
