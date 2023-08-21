@@ -128,5 +128,53 @@ public class Tree<T extends Number> {
     }
 
 
+    private TreeNode deletion(TreeNode root, T key) {
+        if (root == null)
+            return null;
+    
+        if (root.left == null && root.right == null) {
+            return root.data == key ? null : root;
+        }
+    
+        TreeNode keyNode = null, deepestNode = null, parentOfDeepest = null;
+        Queue<TreeNode> queue = new Queue<>();
+        queue.offer(root);
+    
+        while (!queue.isEmpty()) {
+            deepestNode = queue.poll();
+    
+            if (deepestNode.data == key)
+                keyNode = deepestNode;
+    
+            if (deepestNode.left != null) {
+                parentOfDeepest = deepestNode;
+                queue.offer(deepestNode.left);
+            }
+    
+            if (deepestNode.right != null) {
+                parentOfDeepest = deepestNode;
+                queue.offer(deepestNode.right);
+            }
+        }
+    
+        if (keyNode != null) {
+            keyNode.data = deepestNode.data;
+    
+            if (parentOfDeepest.right == deepestNode) {
+                parentOfDeepest.right = null;
+            } else {
+                parentOfDeepest.left = null;
+            }
+        }
+    
+        return root;
+    }
+
+    public TreeNode deleteNode(T key) {
+        return this.deletion(this.root, key);
+    }
+    
+
+
     
 }
