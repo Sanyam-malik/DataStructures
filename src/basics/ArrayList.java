@@ -28,7 +28,7 @@ public class ArrayList<T> {
 
 
     public T get(int index) {
-        if(index > size - 1) {
+        if(index > size - 1 || index < 0) {
             return null;
         } else {
             return arr[index];
@@ -37,7 +37,7 @@ public class ArrayList<T> {
 
 
     public T set(int index, T elem) {
-        if(index > size - 1) {
+        if(index > size - 1 || index < 0) {
             return null;
         } else {
             arr[index] = elem;
@@ -47,7 +47,7 @@ public class ArrayList<T> {
 
 
     public T remove(int index) {
-        if(index > size - 1) {
+        if(index > size - 1 || index < 0) {
             return null;
         } else {
             T temp = arr[index];
