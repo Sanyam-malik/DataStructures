@@ -2,7 +2,9 @@ import java.util.List;
 
 import basics.ArrayList;
 import basics.BinarySearch;
+import basics.BinarySearchTree;
 import basics.BubbleSort;
+import basics.Graph;
 import basics.HashTable;
 import basics.LinkedList;
 import basics.MergeSort;
@@ -63,13 +65,15 @@ public class App {
         System.out.println(que1.peek());
         System.out.println(que1); */
 
-        /* System.out.println("Sorting!");
+        /* 
+        System.out.println("Sorting!");
         ArrayList<Integer> al = new ArrayList<Integer>();
-        al.addAll(List.of(22, 45, 10, 78, 32));
+        al.addAll(List.of(23, 11, 60, 32, 41, 57, 34,78));
 
-        QuickSort<Integer> mergeSort = new QuickSort<Integer>(al, SelectionSort.TYPE_DESCENDING);
+        QuickSort<Integer> mergeSort = new QuickSort<Integer>(al, QuickSort.TYPE_ASCENDING);
         mergeSort.sort();
-        System.out.println(al); */
+        System.out.println(al);
+        */
 
         /* System.out.println("BinarySearch!");
         BinarySearch<Integer> bSearch = new BinarySearch<>(al, BinarySearch.TYPE_DESCENDING);
@@ -91,5 +95,54 @@ public class App {
         hashTable.put("New York", 290);
         hashTable.remove("Berlin");
         System.out.println(hashTable.entrySet()); */
+
+        /* Graph graph = new Graph(Graph.IMPLEMENT_BY_ADJACENCY_LIST, Graph.GRAPH_DIRECTED, Graph.TYPE_UNWEIGHTED, 6);
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 3);
+        graph.addEdge(0, 4);
+        graph.addEdge(4, 5);
+        graph.addEdge(3, 5);
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 0);
+        graph.addEdge(2, 1);
+        graph.addEdge(4, 1);
+        graph.addEdge(3, 1);
+        graph.addEdge(5, 4);
+        graph.addEdge(5, 3); */
+
+        /*
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 2);
+        graph.addEdge(1, 0);
+        graph.addEdge(1, 3);
+        graph.addEdge(2, 0);
+        graph.addEdge(2, 3);
+        graph.addEdge(3, 4);
+        graph.addEdge(3, 5);
+        graph.addEdge(4, 3);
+        graph.addEdge(5, 3);
+        graph.printGraph();
+        graph.dfs();
+        */
+
+       /*  Graph g = new Graph(5);
+		
+		g.addEdge(1, 0);
+		g.addEdge(0, 2);
+		g.addEdge(2, 1);
+		g.addEdge(0, 3);
+		g.addEdge(1, 4);
+        g.printGraph();
+        g.dfs(); */
+
+        /* 
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        al.addAll(List.of(5,1,3,4,2,7));
+        System.out.println("BinarySearchTree!");
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+        tree.buildTree(al);
+        tree.traverseTree(BinarySearchTree.TRAVERSE_TYPE_INORDER);
+        System.out.println(tree.search(5));
+        */
     }
 }
