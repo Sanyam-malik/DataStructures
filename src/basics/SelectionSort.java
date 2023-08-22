@@ -3,7 +3,7 @@ package basics;
 import java.util.Iterator;
 
 public class SelectionSort<T extends Number> {
-    Collections<T> list;
+    public Collections<T> list;
 
     public static final String TYPE_LINKEDLIST = "linkedlist";
 
