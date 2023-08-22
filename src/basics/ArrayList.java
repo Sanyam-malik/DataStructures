@@ -1,6 +1,8 @@
 package basics;
 
-public class ArrayList<T> {
+import java.util.Iterator;
+
+public class ArrayList<T> implements Collections<T>, Iterable<T> {
     private T[] arr;
     public int size;
 
@@ -68,6 +70,42 @@ public class ArrayList<T> {
             sb.append(index+1 < size ? arr[index].toString()+", " : arr[index].toString());
         }
         return sb.toString();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return this.size == 0 ? true : false;
+    }
+
+    @Override
+    public int size() {
+        return this.size;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ArrayListIterator<T>(this);
+    }
+
+    public class ArrayListIterator<T> implements Iterator<T> {
+
+        ArrayList<T> list;
+        int currIndex = 0;
+        
+        public ArrayListIterator(ArrayList<T> list) {
+            this.list = list;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currIndex+1 < this.list.size;
+        }
+
+        @Override
+        public T next() {
+            return this.list.get(currIndex++);
+        }
+
     }
 
     public static void main(String args[]){

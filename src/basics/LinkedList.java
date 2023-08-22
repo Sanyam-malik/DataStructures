@@ -1,6 +1,8 @@
 package basics;
 
-public class LinkedList<T> {
+import java.util.Iterator;
+
+public class LinkedList<T> implements Collections<T>, Iterable<T>{
 
     private Node head;
     public int size;
@@ -108,6 +110,42 @@ public class LinkedList<T> {
         return sb.toString();
     }
 
+    @Override
+    public boolean isEmpty() {
+        return this.size == 0 ? true : false;
+    }
+
+    @Override
+    public int size() {
+        return this.size;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new LinkedListIterator<T>(this);
+    }
+
+    public class LinkedListIterator<T> implements Iterator<T> {
+
+        LinkedList<T> list;
+        int currIndex = 0;
+        
+        public LinkedListIterator(LinkedList<T> list) {
+            this.list = list;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currIndex+1 < this.list.size;
+        }
+
+        @Override
+        public T next() {
+            return this.list.get(currIndex++);
+        }
+
+    }
+
     public static void main(String args[]){
         LinkedList<Integer> linkList = new LinkedList<>();
         linkList.add(10);
@@ -118,6 +156,5 @@ public class LinkedList<T> {
         linkList.remove(0);
         System.out.println(linkList);
     }
-
     
 }
