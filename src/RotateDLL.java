@@ -16,6 +16,7 @@ public class RotateDLL {
 
     Node head = null;
 
+    // Brute Force
     public void rotate(Node head, int k){
         Node currNode = head;
         int arr[] = new int[get_count(head)];
@@ -52,6 +53,49 @@ public class RotateDLL {
         printList(newHead);
     }
 
+    // Optimized Approach
+    public void rotateOptimum(Node head, int k){
+        Node currNode = head;
+        Node ansNode = null;
+        Node newHead = null;
+
+        int index = 0;
+        while(currNode != null){
+            if(index >= k){
+                if(newHead == null){
+                    Node newNode = new Node(currNode.data);
+                    ansNode = newNode;
+                    newHead = newNode;
+                } else {
+                    // New values are boing appended
+                    Node newNode = new Node(currNode.data);
+                    newNode.prev = ansNode;
+                    ansNode.next = newNode;
+                    ansNode = ansNode.next;
+                }
+            }
+            currNode = currNode.next;
+            index++;
+        }
+
+        currNode = head;
+        index = 0;
+        while(currNode != null){
+            if(index < k){
+                // New values are boing appended
+                Node newNode = new Node(currNode.data);
+                newNode.prev = ansNode;
+                ansNode.next = newNode;
+                ansNode = ansNode.next;
+            } else {
+                break;
+            }
+            currNode = currNode.next;
+            index++;
+        }
+        printList(newHead);
+    }
+
     public int get_count(Node head){
         int count = 0;
         Node currNode = head;
@@ -83,7 +127,7 @@ public class RotateDLL {
         for(int x : arr){
             il.insert(x);
         }
-        il.rotate(il.head, 4);
+        il.rotateOptimum(il.head, 4);
 	}
 	
 	public static void printList(Node head)
