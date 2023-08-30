@@ -45,6 +45,7 @@ public class MinimumSwaps {
         o1.arr = arr;
         o1.quicksort(0, arr.length-1);
         o1.printArray();
+        System.out.println("Minimum Swaps: ");
         System.out.println(o1.count);
     }
 }
