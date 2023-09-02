@@ -135,12 +135,25 @@ public class App {
         g.printGraph();
         g.dfs(); */
 
-        ArrayList<Integer> al = new ArrayList<Integer>();
+        /*ArrayList<Integer> al = new ArrayList<Integer>();
         al.addAll(List.of(5,1,3,4,2,7));
         System.out.println("BinarySearchTree!");
         BinarySearchTree<Integer> tree = new BinarySearchTree<>();
         tree.buildTree(al);
         tree.traverseTree(BinarySearchTree.TRAVERSE_TYPE_INORDER);
         System.out.println(tree.search(5));
+        */
+
+        Graph g = new Graph(4);
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        g.findAllPaths(2, 3);
+
+
     }
 }
