@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class Graph {
 
@@ -10,7 +11,7 @@ public class Graph {
     public static final String DIRECTED_GRAPH = "directed";
     public static final String UNDIRECTED_GRAPH = "undirected";
     
-    AdjacencyList list;
+    private AdjacencyList list;
     int vertices = 0;
 
     Graph(int vertices) {
@@ -53,12 +54,37 @@ public class Graph {
         System.out.println();
     }
 
+    public void printAllPaths(int src, int dest) {
+        boolean[] vis = new boolean[vertices];
+        vis[src] = true;
+        list.printAllPairs(src, dest, ""+src, vis);
+    }
+
+    public void topoLogicalSort() {
+        boolean[] vis = new boolean[vertices];
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < vertices; i++) {
+            if (!vis[i]) {
+                list.topoLogicalSort(i, vis, stack);
+            }
+        }
+        
+        System.out.println("Topological sort: ");
+        while(!stack.isEmpty()) {
+            int v = stack.pop();
+            String placeholder = !stack.isEmpty() ? "->": "";
+            System.out.print(v+placeholder);
+        }
+    }
+
     public void printGraph() {
         list.printGraph();
     }
 
     public static void main(String args[]) {
-        Graph g = new Graph(4);
+        Graph g = new Graph(6);
+        /* for others
         g.addEdge(0, 1, 10);
         g.addEdge(0, 2, 20);
         g.addEdge(1, 3, 5);
@@ -66,7 +92,20 @@ public class Graph {
         g.addEdge(3, 0, 15);
         g.breadthFirstSearch(0);
         g.depthFirstSearch(0);
-        g.printGraph();
+        g.printAllPaths(0, 3);
+        */
+
+        /* for topological sort
+        g.addEdge(5, 2);
+        g.addEdge(5, 0);
+        g.addEdge(4, 0);
+        g.addEdge(4, 1);
+        g.addEdge(2, 3);
+        g.addEdge(3, 1);
+        g.topoLogicalSort();
+        */
+        //g.printGraph();
+        
     }
 
     

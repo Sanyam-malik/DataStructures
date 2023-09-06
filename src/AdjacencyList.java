@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 
 public class AdjacencyList {
     List<List<Edge>> list = new ArrayList<>();
@@ -125,6 +126,35 @@ public class AdjacencyList {
             if(!visited[e.dest]){
                 depthFirstSearch(e.dest, visited);
             }
+        }
+    }
+
+    public void topoLogicalSort(int vertex, boolean visited[], Stack<Integer> stack) {
+        visited[vertex] = true;
+
+        for(Edge e: getNeighbours(vertex)) {
+            if(!visited[e.dest]){
+                topoLogicalSort(e.dest, visited, stack);
+            }
+        }
+
+        stack.push(vertex);
+    }
+
+    /* Get All Paths */
+    public void printAllPairs(int vertex, int dest, String path, boolean visited[]) {
+        if(vertex == dest) {
+            System.out.println();
+            System.out.println("Path: "+path);
+        }
+        
+
+        for(Edge e: getNeighbours(vertex)) {
+            visited[vertex] = true;
+            if(!visited[e.dest]){
+                printAllPairs(e.dest, dest, path+"->"+e.dest, visited);
+            }
+            visited[vertex] = false;
         }
     }
 
