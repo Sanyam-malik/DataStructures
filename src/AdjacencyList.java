@@ -11,6 +11,7 @@ public class AdjacencyList {
 
     public AdjacencyList(int vertices) {
         this.vertices = vertices;
+        this.isDirected = true;
 
         for(int i=0; i<vertices;i++) {
             list.add(new ArrayList<>());
@@ -63,7 +64,7 @@ public class AdjacencyList {
         List<Edge> srcEdges = this.list.get(src);
         srcEdges.add(new Edge(src, dest));
 
-        if(isDirected){
+        if(!isDirected){
             List<Edge> destEdges = this.list.get(dest);
             destEdges.add(new Edge(dest, src));
         }
@@ -72,7 +73,7 @@ public class AdjacencyList {
     public void addEdge(int src, int dest, int wt) {
         List<Edge> srcEdges = this.list.get(src);
         srcEdges.add(new Edge(src, dest, isWeighted ? wt : 0));
-        if(isDirected){
+        if(!isDirected){
             List<Edge> destEdges = this.list.get(dest);
             destEdges.add(new Edge(dest, src, isWeighted ? wt : 0));
         }
@@ -88,7 +89,7 @@ public class AdjacencyList {
         }
 
         
-        if(this.isDirected) {
+        if(!this.isDirected) {
             List<Edge> destEdges = this.list.get(dest);
             for (Edge edge : destEdges) {
                 if (edge.dest == src) {
@@ -119,8 +120,8 @@ public class AdjacencyList {
     }
 
     public void depthFirstSearch(int vertex, boolean visited[]) {
-        System.out.print(vertex + " ");
         visited[vertex] = true;
+        System.out.print(vertex+ " ");
 
         for(Edge e: getNeighbours(vertex)) {
             if(!visited[e.dest]){
@@ -129,6 +130,47 @@ public class AdjacencyList {
         }
     }
 
+    public boolean containsCycle(int src, boolean visited[]){
+        boolean rec[] = new boolean[vertices];
+        return isDirected ? isDirectedCyclic(src, visited, rec) : isUnDirectedCyclic(src, -1, visited);
+    }
+
+    public boolean isDirectedCyclic(int vertex, boolean visited[], boolean rec[]) {
+        visited[vertex] = true;
+        rec[vertex] = true;
+        for(Edge e: getNeighbours(vertex)) {
+            if(rec[e.dest]) {
+                return true;
+            }
+            else if(!visited[e.dest]){
+               boolean isCycle = isDirectedCyclic(e.dest, visited, rec);
+               if(isCycle) {
+                    return true;
+                }
+            }
+        }
+        rec[vertex] = false;
+        return false;
+    }
+
+    public boolean isUnDirectedCyclic(int vertex, int parent, boolean visited[]) {
+        visited[vertex] = true;
+
+        for(Edge e: getNeighbours(vertex)) {
+            if(visited[e.dest] && vertex != parent) {
+                return true;
+            }
+            else if(!visited[e.dest]){
+                boolean isCycle = isUnDirectedCyclic(e.dest, vertex, visited);
+                if(isCycle) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /* Topological sort */
     public void topoLogicalSort(int vertex, boolean visited[], Stack<Integer> stack) {
         visited[vertex] = true;
 

@@ -49,14 +49,12 @@ public class Graph {
 
     public void depthFirstSearch(int src) {
         boolean[] vis = new boolean[vertices];
-        vis[src] = true;
         list.depthFirstSearch(src, vis);
         System.out.println();
     }
 
     public void printAllPaths(int src, int dest) {
         boolean[] vis = new boolean[vertices];
-        vis[src] = true;
         list.printAllPairs(src, dest, ""+src, vis);
     }
 
@@ -78,13 +76,18 @@ public class Graph {
         }
     }
 
+    public boolean hasCycle(int src) {
+        boolean[] vis = new boolean[vertices];
+        return list.containsCycle(src, vis);
+    }
+
     public void printGraph() {
         list.printGraph();
     }
 
     public static void main(String args[]) {
-        Graph g = new Graph(6);
-        /* for others
+        Graph g = new Graph(4);
+        /* for others (4)
         g.addEdge(0, 1, 10);
         g.addEdge(0, 2, 20);
         g.addEdge(1, 3, 5);
@@ -95,7 +98,7 @@ public class Graph {
         g.printAllPaths(0, 3);
         */
 
-        /* for topological sort
+        /* for topological sort (6)
         g.addEdge(5, 2);
         g.addEdge(5, 0);
         g.addEdge(4, 0);
@@ -104,7 +107,17 @@ public class Graph {
         g.addEdge(3, 1);
         g.topoLogicalSort();
         */
-        //g.printGraph();
+        
+        /* for directed graph (4)
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 0);
+        System.out.println(g.hasCycle(0));
+        */
+        g.printGraph();
         
     }
 
