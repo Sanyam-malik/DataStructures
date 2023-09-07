@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -8,6 +10,21 @@ public class AdjacencyList {
     boolean isDirected = false;
     boolean isWeighted = false;
     int vertices = 0;
+
+    public class Pair implements Comparable<Pair>{
+        int vertex;
+        int wt;
+
+        Pair(int vertex, int wt) {
+            this.vertex = vertex;
+            this.wt = wt;
+        }
+
+        @Override
+        public int compareTo(AdjacencyList.Pair o) {
+            return this.wt - o.wt;
+        }
+    }
 
     public AdjacencyList(int vertices) {
         this.vertices = vertices;
@@ -181,6 +198,59 @@ public class AdjacencyList {
         }
 
         stack.push(vertex);
+    }
+
+    /* dijkstra algorithm */
+    public void dijkstra(boolean visited[], int src) {
+        int distance[] = new int[vertices];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+        PriorityQueue<Pair> pq = new PriorityQueue<>();
+        pq.add(new Pair(src, src));
+        distance[src] = 0;
+
+        while(!pq.isEmpty()) {
+            Pair p = pq.poll();
+
+            if(!visited[p.vertex]){
+                visited[p.vertex] = true;
+                
+                for(Edge e: getNeighbours(p.vertex)) {
+                    int u = e.src;
+                    int v = e.dest;
+                    int wt = e.wt;
+                    if (distance[u] + wt < distance[v]) {
+                        distance[v] = distance[u] + wt;
+                        pq.add(new Pair(v, distance[v]));
+                    }
+                }
+            }
+        }
+
+        for(int value: distance) {
+            System.out.print(value+ " ");
+        }
+        System.out.println();
+    }
+
+    public void bellmanFord() {
+        int distance[] = new int[vertices];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+        distance[0] = 0;
+        for(int vertex = 0; vertex < list.size();vertex++) {
+            for(Edge e: getNeighbours(vertex)) {
+                int u = e.src;
+                int v = e.dest;
+                int wt = e.wt;
+                if (distance[u] != Integer.MAX_VALUE && distance[u] + wt < distance[v]) {
+                    distance[v] = distance[u] + wt;
+                }
+            }
+        }
+
+        for(int value: distance) {
+            System.out.print(value+ " ");
+        }
+        System.out.println();
     }
 
     /* Get All Paths */
