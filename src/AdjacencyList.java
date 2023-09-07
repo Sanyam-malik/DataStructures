@@ -236,13 +236,16 @@ public class AdjacencyList {
         int distance[] = new int[vertices];
         Arrays.fill(distance, Integer.MAX_VALUE);
         distance[0] = 0;
-        for(int vertex = 0; vertex < list.size();vertex++) {
-            for(Edge e: getNeighbours(vertex)) {
-                int u = e.src;
-                int v = e.dest;
-                int wt = e.wt;
-                if (distance[u] != Integer.MAX_VALUE && distance[u] + wt < distance[v]) {
-                    distance[v] = distance[u] + wt;
+        
+        for(int k=0; k< vertices-1; k++){
+            for(int vertex = 0; vertex < list.size();vertex++) {
+                for(Edge e: getNeighbours(vertex)) {
+                    int u = e.src;
+                    int v = e.dest;
+                    int wt = e.wt;
+                    if (distance[u] != Integer.MAX_VALUE && distance[u] + wt < distance[v]) {
+                        distance[v] = distance[u] + wt;
+                    }
                 }
             }
         }
