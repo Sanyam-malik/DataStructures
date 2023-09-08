@@ -55,7 +55,7 @@ When studying data structures (DS) and algorithms (DS&A), it's essential to focu
 - [x] Insertion Sort
 - [x] Quick Sort
 - [x] Merge Sort
-- [ ] Heap Sort
+- [-] Heap Sort
 - [ ] Radix Sort
 
 ## Searching Algorithms
@@ -103,13 +103,13 @@ When studying data structures (DS) and algorithms (DS&A), it's essential to focu
 - [ ] Dynamic Programming (e.g., solving optimization problems)
 
 ## Complexity Analysis
-- [] Understanding Big O notation and time/space complexity analysis for various algorithms.
+- [ ] Understanding Big O notation and time/space complexity analysis for various algorithms.
 
 ## Common Coding Patterns
-- [ ] Sliding Window
-- [ ] Two-Pointer
+- [x] Sliding Window
+- [x] Two-Pointer
 - [x] Depth-First Search (DFS) and Breadth-First Search (BFS) templates
-- [ ] Fast and Slow Pointers (for cycle detection)
+- [x] Fast and Slow Pointers (for cycle detection)
 
 ## Online Resources
 - LeetCode, HackerRank, and other coding challenge websites for practical application.
