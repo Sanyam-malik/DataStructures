@@ -256,6 +256,48 @@ public class AdjacencyList {
         System.out.println();
     }
 
+
+    public void floydWarshall() {
+        int[][] distance = new int[vertices][vertices];
+        
+        /* Initialize the values to infinity */
+        for(int i=0; i< vertices; i++) {
+            for(int j=0; j< vertices; j++) {
+                distance[i][j] = Integer.MAX_VALUE;
+            }
+        }
+
+        /* Adding original values */
+        for(int i=0; i< vertices; i++) {
+            for(int j=0; j < list.get(i).size(); j++) {
+                Edge e = list.get(i).get(j);
+                distance[i][j] = e.wt;
+            }   
+        }
+        
+        for(int k=0; k< vertices-1; k++){
+            for(int i = 0; i < vertices;i++) {
+                for(int j=0; j< vertices; j++) {
+                    if(distance[i][k] != Integer.MAX_VALUE && distance[j][k] != Integer.MAX_VALUE && distance[i][k]+distance[j][k] < distance[i][j]) {
+                        distance[i][j] = distance[i][k]+distance[j][k];
+                    }
+                }
+            }
+        }
+
+        // Print the shortest paths
+        for (int i = 0; i < vertices; i++) {
+            for (int j = 0; j < vertices; j++) {
+                if (distance[i][j] == Integer.MAX_VALUE) {
+                    System.out.print("INF\t");
+                } else {
+                    System.out.print(distance[i][j] + "\t");
+                }
+            }
+            System.out.println();
+        }
+    }
+
     /* Get All Paths */
     public void printAllPairs(int vertex, int dest, String path, boolean visited[]) {
         if(vertex == dest) {

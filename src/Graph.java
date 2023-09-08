@@ -91,6 +91,10 @@ public class Graph {
         list.bellmanFord();
     }
 
+    public void floydWarshall() {
+        list.floydWarshall();
+    }
+
     public void printGraph() {
         list.printGraph();
     }
