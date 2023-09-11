@@ -114,6 +114,25 @@ When studying data structures (DS) and algorithms (DS&A), it's essential to focu
 ## Online Resources
 - LeetCode, HackerRank, and other coding challenge websites for practical application.
 
+## Levels
+
+![Level 1](syllabus/SyllabusL1.png)
+![Level 2](syllabus/SyllabusL2.png)
+![Level 3](syllabus/SyllabusL3.png)
+![Level 4](syllabus/SyllabusL4.png)
+![Level 5](syllabus/SyllabusL5.png)
+![Level 6](syllabus/SyllabusL6.png)
+![Level 7](syllabus/SyllabusL7.png)
+![Level 8](syllabus/SyllabusL8.png)
+![Level 9](syllabus/SyllabusL9.png)
+![Level 10](syllabus/SyllabusL10.png)
+![Level 11](syllabus/SyllabusL11.png)
+![Level 12](syllabus/SyllabusL12.png)
+![Level 13](syllabus/SyllabusL13.png)
+![Level 14](syllabus/SyllabusL14.png)
+![Level 15](syllabus/SyllabusL15.png)
+![Level 16](syllabus/SyllabusL16.png)
+
 Remember that understanding the principles behind these algorithms, their time and space complexity, and when to use them is more important than memorizing code. You can always refer to code examples and implementations when needed, but a solid understanding of the underlying concepts will help you excel in DS&A interviews and real-world problem-solving.
 
 
