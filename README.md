@@ -55,7 +55,7 @@ When studying data structures (DS) and algorithms (DS&A), it's essential to focu
 - [x] Insertion Sort
 - [x] Quick Sort
 - [x] Merge Sort
-- [-] Heap Sort
+- [x] Heap Sort
 - [ ] Radix Sort
 
 ## Searching Algorithms
@@ -67,7 +67,7 @@ When studying data structures (DS) and algorithms (DS&A), it's essential to focu
 - [x] Breadth-First Search (BFS)
 - [x] Dijkstra's Algorithm (shortest path in weighted graphs)
 - [x] Bellman-Ford Algorithm (shortest path with negative weights)
-- [ ] Floyd-Warshall Algorithm (all-pairs shortest paths)
+- [x] Floyd-Warshall Algorithm (all-pairs shortest paths)
 - [x] Topological Sort (for directed acyclic graphs)
 
 ## Dynamic Programming
@@ -103,7 +103,7 @@ When studying data structures (DS) and algorithms (DS&A), it's essential to focu
 - [ ] Dynamic Programming (e.g., solving optimization problems)
 
 ## Complexity Analysis
-- [ ] Understanding Big O notation and time/space complexity analysis for various algorithms.
+- [x] Understanding Big O notation and time/space complexity analysis for various algorithms.
 
 ## Common Coding Patterns
 - [x] Sliding Window
@@ -117,7 +117,6 @@ When studying data structures (DS) and algorithms (DS&A), it's essential to focu
 ## Levels
 
 ![Level 1](syllabus/SyllabusL1.png)
-![Level 2](syllabus/SyllabusL2.png)
 ![Level 3](syllabus/SyllabusL3.png)
 ![Level 4](syllabus/SyllabusL4.png)
 ![Level 5](syllabus/SyllabusL5.png)
