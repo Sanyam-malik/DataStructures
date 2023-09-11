@@ -1,6 +1,7 @@
 package basics;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class ArrayList<T> implements Collections<T>, Iterable<T> {
     private T[] arr;
@@ -117,6 +118,13 @@ public class ArrayList<T> implements Collections<T>, Iterable<T> {
         arrList.set(1, 45);
         arrList.remove(0);
         System.out.println(arrList);
+    }
+
+
+    public void addAll(List<T> list) {
+        for(T ob : list){
+            this.add(ob);
+        }
     }
 
 
