@@ -324,6 +324,30 @@ public class AdjacencyList {
         System.out.println("MST Cost: "+mstCost);
     }
 
+    public void kosarajuAlgorithm(){
+        boolean visited[] = new boolean[vertices];
+        Stack<Integer> stack = new Stack<>();
+
+        this.topoLogicalSort(0, visited, stack);
+
+        Graph transposeGraph = new Graph(vertices);
+        for(int vertex=0; vertex< vertices; vertex++) {
+            for(Edge e: getNeighbours(vertex)) {
+                transposeGraph.addEdge(e.dest, e.src, e.wt);
+            }
+        }
+
+        Arrays.fill(visited, false);
+
+        while(!stack.isEmpty()) {
+            int vertex = stack.pop();
+            if(!visited[vertex]) {
+                depthFirstSearch(vertex, visited);
+            }
+            System.out.println();
+        }
+    }
+
     /* Get All Paths */
     public void printAllPairs(int vertex, int dest, String path, boolean visited[]) {
         if(vertex == dest) {

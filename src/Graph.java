@@ -87,17 +87,21 @@ public class Graph {
         list.dijkstra(vis, src);
     }
 
-    public void primAlgorithm(int src) {
-        boolean[] vis = new boolean[vertices];
-        list.primAlgorithm(vis, src);
-    }
-
     public void bellmanFord() {
         list.bellmanFord();
     }
 
     public void floydWarshall() {
         list.floydWarshall();
+    }
+
+    public void primAlgorithm(int src) {
+        boolean[] vis = new boolean[vertices];
+        list.primAlgorithm(vis, src);
+    }
+
+    public void kosarajuAlgorithm() {
+       list.kosarajuAlgorithm();
     }
 
     public void printGraph() {
