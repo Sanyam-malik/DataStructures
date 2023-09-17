@@ -348,6 +348,38 @@ public class AdjacencyList {
         }
     }
 
+    public void tarzanAlgorithm(){
+        boolean visited[] = new boolean[vertices];
+        int dt[] = new int[vertices];
+        int lowDT[] = new int[vertices];
+
+        for(int i=0; i< vertices;i++) {
+            if(!visited[i]) {
+                this.dfsTarzan(visited, dt, lowDT, i, 0, -1);
+            }
+        }
+    }
+
+    public void dfsTarzan(boolean visited[], int dt[], int lowDT[], int curr, int time, int parent) {
+        visited[curr] = true;
+        dt[curr] = lowDT[curr] = ++time;
+        for(Edge e: getNeighbours(curr)) {
+            if(e.dest == parent) {
+                continue;
+            }
+            if(!visited[e.dest]) {
+                dfsTarzan(visited, dt, lowDT, e.dest, time, curr);
+                lowDT[curr] = Math.min(lowDT[curr], lowDT[e.dest]);
+                if(dt[curr] < lowDT[e.dest]) {
+                    System.out.println(curr+"->"+e.dest);
+                }
+            }
+            if(visited[e.dest]) {
+                lowDT[curr] = Math.min(lowDT[curr], dt[e.dest]);
+            }
+        }
+    }
+
     /* Get All Paths */
     public void printAllPairs(int vertex, int dest, String path, boolean visited[]) {
         if(vertex == dest) {

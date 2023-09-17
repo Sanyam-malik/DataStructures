@@ -104,6 +104,10 @@ public class Graph {
        list.kosarajuAlgorithm();
     }
 
+    public void tarzanAlgorithm() {
+       list.tarzanAlgorithm();
+    }
+
     public void printGraph() {
         list.printGraph();
     }
