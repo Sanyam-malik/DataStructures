@@ -298,6 +298,32 @@ public class AdjacencyList {
         }
     }
 
+    /* prim's algorithm */
+    public void primAlgorithm(boolean visited[], int src) {
+        int mstCost = 0;
+        PriorityQueue<Pair> pq = new PriorityQueue<>();
+        pq.add(new Pair(src, src));
+
+        while(!pq.isEmpty()) {
+            Pair p = pq.poll();
+
+            if(!visited[p.vertex]){
+                mstCost+=p.wt;
+                visited[p.vertex] = true;
+                
+                for(Edge e: getNeighbours(p.vertex)) {
+                    int u = e.src;
+                    int v = e.dest;
+                    int wt = e.wt;
+                    if(!visited[v]) {
+                        pq.add(new Pair(v, wt));
+                    }
+                }
+            }
+        }
+        System.out.println("MST Cost: "+mstCost);
+    }
+
     /* Get All Paths */
     public void printAllPairs(int vertex, int dest, String path, boolean visited[]) {
         if(vertex == dest) {

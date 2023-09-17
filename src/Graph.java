@@ -87,6 +87,11 @@ public class Graph {
         list.dijkstra(vis, src);
     }
 
+    public void primAlgorithm(int src) {
+        boolean[] vis = new boolean[vertices];
+        list.primAlgorithm(vis, src);
+    }
+
     public void bellmanFord() {
         list.bellmanFord();
     }
@@ -100,7 +105,7 @@ public class Graph {
     }
 
     public static void main(String args[]) {
-        Graph g = new Graph(9, false, true);
+        Graph g = new Graph(5, false, true);
         /* for others (4)
         g.addEdge(0, 1, 10);
         g.addEdge(0, 2, 20);
@@ -132,6 +137,7 @@ public class Graph {
         System.out.println(g.hasCycle(0));
         */
 
+        /* for dijstra and bellman (9)
         g.addEdge(0, 1, 4);
 		g.addEdge(0, 7, 8);
 		g.addEdge(1, 2, 8);
@@ -148,6 +154,16 @@ public class Graph {
 		g.addEdge(7, 8, 7);
         g.dijkstra(0);
         g.bellmanFord();
+        */
+        
+        g.addEdge(0, 1, 2);
+        g.addEdge(1, 2, 3);
+        g.addEdge(0, 3, 6);
+        g.addEdge(1, 3, 8);
+        g.addEdge(1, 4, 5);
+        g.addEdge(2, 4, 7);
+
+        g.primAlgorithm(0);
         g.printGraph();
         
     }
