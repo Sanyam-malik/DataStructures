@@ -1,9 +1,10 @@
 /*
 <metadata>
-<name>Sum of digits</name>
-<status>Completed</status>
+  <name>Sum of digits</name>
+  <status>Completed</status>
   <level>Easy</level>
-<url>https://www.geeksforgeeks.org/problems/sum-of-digits1742/1</url>
+  <url>https://www.geeksforgeeks.org/problems/sum-of-digits1742/1</url>
+  <date>2026-05-11</date>
 </metadata>
 */
 
