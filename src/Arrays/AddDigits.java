@@ -3,6 +3,7 @@
   <name>Add Digits</name>
   <url>https://leetcode.com/problems/add-digits</url>
   <status>Completed</status>
+  <level>Easy</level>
 </metadata>
 */
 class Solution {
