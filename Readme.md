@@ -17,41 +17,41 @@ Each problem file can contain a metadata section like this:
 ```xml
 <metadata>
 
-    <Name>Two Sum</Name>
+    <name>Two Sum</name>
 
-    <Path>arrays/two_sum.py</Path>
+    <path>arrays/two_sum.py</path>
 
-    <Description>
+    <description>
         Find two numbers that add up to target.
-    </Description>
+    </description>
 
-    <Status>Solved</Status>
+    <status>Solved</status>
 
-    <URL>
+    <url>
         https://leetcode.com/problems/two-sum/
-    </URL>
+    </url>
 
-    <Notes>
+    <notes>
         Use hashmap for O(n) solution.
-    </Notes>
+    </notes>
 
-    <Date>2026-05-11</Date>
+    <date>2026-05-11</date>
 
-    <Level>Easy</Level>
+    <level>Easy</level>
 
-    <Companies>Google:Amazon:Meta</Companies>
+    <companies>Google:Amazon:Meta</companies>
 
-    <Concepts>HashMap:Arrays</Concepts>
+    <concepts>HashMap:Arrays</concepts>
 
-    <Remarks>
+    <remarks>
         Classic Problem:Frequently Asked
-    </Remarks>
+    </remarks>
 
-    <SubDirectory>arrays</SubDirectory>
+    <subdirectory>arrays</subdirectory>
 
-    <SheetItemStatus>true</SheetItemStatus>
+    <sheetitemstatus>true</sheetitemstatus>
 
-    <CountInclusion>true</CountInclusion>
+    <countinclusion>true</countinclusion>
 
 </metadata>
 ```
@@ -62,20 +62,20 @@ Each problem file can contain a metadata section like this:
 
 | Field | Type | Description |
 |---|---|---|
-| `Name` | String | Problem name |
-| `Path` | String | Relative path to solution file |
-| `Description` | String | Short problem description |
-| `Status` | String | Current status |
-| `URL` | String | Original problem URL |
-| `Notes` | String | Personal notes |
-| `Date` | String (`YYYY-MM-DD`) | Date added |
-| `Level` | String | Difficulty level |
-| `Companies` | Multi-value String | Companies asking this question |
-| `Concepts` | Multi-value String | Concepts/topics used |
-| `Remarks` | Multi-value String | Additional comments |
-| `SubDirectory` | String | Logical grouping/folder |
-| `SheetItemStatus` | Boolean | Whether active in sheet tracking |
-| `CountInclusion` | Boolean | Whether included in statistics/counts |
+| `name` | String | Problem name |
+| `path` | String | Relative path to solution file |
+| `description` | String | Short problem description |
+| `status` | String | Current status |
+| `url` | String | Original problem URL |
+| `notes` | String | Personal notes |
+| `date` | String (`YYYY-MM-DD`) | Date added |
+| `level` | String | Difficulty level |
+| `companies` | Multi-value String | Companies asking this question |
+| `concepts` | Multi-value String | Concepts/topics used |
+| `remarks` | Multi-value String | Additional comments |
+| `subdirectory` | String | Logical grouping/folder |
+| `sheetitemstatus` | Boolean | Whether active in sheet tracking |
+| `countinclusion` | Boolean | Whether included in statistics/counts |
 
 ---
 
@@ -83,16 +83,16 @@ Each problem file can contain a metadata section like this:
 
 The following fields support multiple values separated using `:`.
 
-- `Companies`
-- `Concepts`
-- `Remarks`
+- `companies`
+- `concepts`
+- `remarks`
 
 ---
 
 ## Companies
 
 ```xml
-<Companies>Google:Amazon:Meta</Companies>
+<companies>Google:Amazon:Meta</companies>
 ```
 
 ---
@@ -100,7 +100,7 @@ The following fields support multiple values separated using `:`.
 ## Concepts
 
 ```xml
-<Concepts>HashMap:Arrays:Two Pointers</Concepts>
+<concepts>HashMap:Arrays:Two Pointers</concepts>
 ```
 
 ---
@@ -108,7 +108,7 @@ The following fields support multiple values separated using `:`.
 ## Remarks
 
 ```xml
-<Remarks>Classic Problem:Frequently Asked:Good For Revision</Remarks>
+<remarks>Classic Problem:Frequently Asked:Good For Revision</remarks>
 ```
 
 ---
@@ -125,7 +125,7 @@ The parser will:
 Example:
 
 ```xml
-<Companies>google:amazon:meta</Companies>
+<companies>google:amazon:meta</companies>
 ```
 
 Stored as:
@@ -146,8 +146,8 @@ false
 ```
 
 Supported boolean fields:
-- `SheetItemStatus`
-- `CountInclusion`
+- `sheetitemstatus`
+- `countinclusion`
 
 ---
 
@@ -156,7 +156,7 @@ Supported boolean fields:
 Dates should follow:
 
 ```xml
-<Date>2026-05-11</Date>
+<date>2026-05-11</date>
 ```
 
 Format:
@@ -194,11 +194,11 @@ Hard
 ```xml
 <metadata>
 
-    <Name>Binary Search</Name>
+    <name>Binary Search</name>
 
-    <Status>Solved</Status>
+    <status>Solved</status>
 
-    <Level>Easy</Level>
+    <level>Easy</level>
 
 </metadata>
 ```
@@ -208,6 +208,7 @@ Hard
 # Notes
 
 - Metadata tags are case-sensitive.
+- All metadata tags should be lowercase.
 - Unknown tags are ignored by the parser.
 - Missing fields default to `None`.
 - Boolean fields default to `True` when unspecified.
@@ -237,21 +238,21 @@ graphs/
 """
 <metadata>
 
-    <Name>Two Sum</Name>
+    <name>Two Sum</name>
 
-    <Description>
+    <description>
         Find indices of two numbers that add up to target.
-    </Description>
+    </description>
 
-    <Status>Solved</Status>
+    <status>Solved</status>
 
-    <Level>Easy</Level>
+    <level>Easy</level>
 
-    <Companies>Google:Amazon:Meta</Companies>
+    <companies>Google:Amazon:Meta</companies>
 
-    <Concepts>HashMap:Arrays</Concepts>
+    <concepts>HashMap:Arrays</concepts>
 
-    <Remarks>Classic Problem</Remarks>
+    <remarks>Classic Problem</remarks>
 
 </metadata>
 """
