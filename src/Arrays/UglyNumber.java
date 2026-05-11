@@ -2,6 +2,7 @@
 <metadata>
   <name>Ugly Number</name>
   <ur>https://leetcode.com/problems/ugly-number/</url>
+  <status>Completed</status>
 </metadata>
   */
 class Solution {
