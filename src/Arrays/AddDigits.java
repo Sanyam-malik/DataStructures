@@ -4,6 +4,7 @@
   <url>https://leetcode.com/problems/add-digits</url>
   <status>Completed</status>
   <level>Easy</level>
+  <date>2026-05-11</date>
 </metadata>
 */
 class Solution {
