@@ -3,7 +3,8 @@
   <name>Ugly Number</name>
   <ur>https://leetcode.com/problems/ugly-number/</url>
   <status>Completed</status>
-    <level>Easy</level>
+  <level>Easy</level>
+  <date>2026-05-11</date>
 </metadata>
   */
 class Solution {
