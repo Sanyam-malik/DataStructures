@@ -20,7 +20,7 @@ Input: arr[] = [324, 5, 2, 2]
 Output: 333
 Explanation: Just sum it 324+5+2+2=333.</description>
     <notes></notes>
-    <status>In Progress</status>
+    <status>Completed</status>
     <level>Easy</level>
     <companies></companies>
     <remarks></remarks>
