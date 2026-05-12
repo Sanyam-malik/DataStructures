@@ -1,5 +1,12 @@
-
-//https://leetcode.com/problems/number-of-common-factors/
+/*
+<metadata>
+  <name>Number of Common factors</name>
+  <url>https://leetcode.com/problems/number-of-common-factors/</url>
+  <status>Completed</status>
+  <level>Easy</level>
+  <date>2026-05-11</date>
+</metadata>
+*/
 class Solution {
     public int commonFactors(int a, int b) {
         int min = Math.min(a, b);
