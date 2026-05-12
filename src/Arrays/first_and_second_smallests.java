@@ -26,7 +26,7 @@ Constraints:
 1 ≤ arr.size ≤105
 1 ≤ arr[i] ≤ 105</description>
     <notes></notes>
-    <status>In Progress</status>
+    <status>Completed</status>
     <level>Easy</level>
     <companies></companies>
     <remarks></remarks>
