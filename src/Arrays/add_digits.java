@@ -68,7 +68,7 @@ Follow up: Could you do it without any loop/recursion in O(1) runtime?</descript
     <companies></companies>
     <remarks></remarks>
     <concepts></concepts>
-    <date>2026-05-11 00:00:00</date>
+    <date>2026-05-11</date>
 </metadata>
 */
 
