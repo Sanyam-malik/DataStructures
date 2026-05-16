@@ -1,8 +1,7 @@
 /*
 <metadata>
-    <name>Add Digits</name>
-    <url>https://leetcode.com/problems/add-digits</url>
-    <description>Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
+<name>Add Digits</name>
+<description>Given an integer num, repeatedly add all its digits until the result has only one digit, and return it.
 
 Example 1:
 
@@ -23,20 +22,18 @@ Constraints:
 0 <= num <= 231 - 1
 
 Follow up: Could you do it without any loop/recursion in O(1) runtime?</description>
-    <notes></notes>
-    <status>Completed</status>
-    <level>Easy</level>
-    <companies></companies>
-    <remarks></remarks>
-    <concepts></concepts>
-    <date>2026-05-10</date>
+<url>https://leetcode.com/problems/add-digits</url>
+<status>Completed</status>
+<date>2026-05-17</date>
+<level>Easy</level>
+<countinclusion>true</countinclusion>
+<sheetitemstatus>true</sheetitemstatus>
 </metadata>
 */
-
 class Solution {
     public int addDigits(int num) {
         int ans=0;
-        if(num == 0){
+        if(num == 0) {
             return 0;
         }
         while (ans == 0 || ans >=10){
