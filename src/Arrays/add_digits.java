@@ -24,7 +24,7 @@ Constraints:
 Follow up: Could you do it without any loop/recursion in O(1) runtime?</description>
 <url>https://leetcode.com/problems/add-digits</url>
 <status>Completed</status>
-<date>2026-05-17</date>
+<date>2026-05-10</date>
 <level>Easy</level>
 </metadata>
 */
