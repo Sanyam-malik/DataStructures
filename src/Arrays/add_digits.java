@@ -26,8 +26,6 @@ Follow up: Could you do it without any loop/recursion in O(1) runtime?</descript
 <status>Completed</status>
 <date>2026-05-17</date>
 <level>Easy</level>
-<countinclusion>true</countinclusion>
-<sheetitemstatus>true</sheetitemstatus>
 </metadata>
 */
 class Solution {
