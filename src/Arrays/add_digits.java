@@ -31,7 +31,7 @@ Follow up: Could you do it without any loop/recursion in O(1) runtime?</descript
 class Solution {
     public int addDigits(int num) {
         int ans=0;
-        if(num == 0){
+        if(num == 0) {
             return 0;
         }
         while (ans == 0 || ans >=10){
