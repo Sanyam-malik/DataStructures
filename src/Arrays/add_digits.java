@@ -32,7 +32,7 @@ class Solution {
     public int addDigits(int num) {
         int ans=0;
         if(num == 0){
-            return 1;
+            return 0;
         }
         while (ans == 0 || ans >=10){
             ans = 0;
