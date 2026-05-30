@@ -39,7 +39,7 @@ At most 104 calls will be made to sumRange.</description>
     <companies></companies>
     <remarks></remarks>
     <concepts></concepts>
-    <date>2026-05-30</date>
+    <date>2026-05-29</date>
 </metadata>
 */
 
