@@ -1,10 +1,5 @@
 [
     {
-        "name": "Codingninjas",
-        "url": "https://codingninjas.com",
-        "icon": "https://files.codingninjas.in/cnlogo-32511.png"
-    },
-    {
         "name": "Codechef",
         "url": "https://www.codechef.com",
         "icon": "https://avatars.githubusercontent.com/u/11960354?v=4"
@@ -12,21 +7,16 @@
     {
         "name": "Codeforces",
         "url": "https://codeforces.com",
-        "icon": "https://play-lh.googleusercontent.com/EkSlLWf2-04k5Y5F_MDLqoXPdo0TyZX3zKdCfsEUDqVB7INUypTOd6AVmkE_X7ej3JuR"
+        "icon": "https://cdn.iconscout.com/icon/free/png-256/free-code-forces-logo-icon-svg-download-png-3029920.png"
     },
     {
         "name": "Leetcode",
         "url": "https://leetcode.com",
-        "icon": "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+        "icon": "https://cdn3d.iconscout.com/3d/free/thumb/free-leetcode-3d-icon-png-download-9325307.png"
     },
     {
         "name": "GeeksforGeeks",
         "url": "https://www.geeksforgeeks.org",
-        "icon": "https://play-lh.googleusercontent.com/ZI21NMObsjB7DbPU_EXRymHJL3HQpfsrB2N4CWb-diXm4xjl_13mmetYQZvcpgGf-64"
-    },
-    {
-        "name": "LearnYard",
-        "url": "https://learnyard.com",
-        "icon": "https://media.licdn.com/dms/image/D560BAQHaLXMmwWrqpg/company-logo_200_200/0/1701266510516?e=2147483647&v=beta&t=WkbcNpujWPlJewpfat_6kkaWWjnZ05fYtHv1r6Bm0dE"
+        "icon": "https://geeksforgeeks.zohorecruit.in/recruit/viewCareerImage.do?page_id=61093000000211152&type=logo&file_name=GG_Logo.png"
     }
 ]
