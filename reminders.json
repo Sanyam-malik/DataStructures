@@ -2,7 +2,7 @@
     {
         "name": "Weekly Contest",
         "description": "Solve Problem Every Weekday to enhance your skills.",
-        "recurrence": "EVERY SATURDAY",
+        "recurrence": "EVERY_SATURDAY",
         "start_time": "18:30",
         "end_time": "20:00",
         "date": null
