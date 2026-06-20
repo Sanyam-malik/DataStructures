@@ -1,8 +1,7 @@
 /*
 <metadata>
-    <name>Spiral Matrix</name>
-    <url>https://leetcode.com/problems/spiral-matrix/description/</url>
-    <description>Given an m x n matrix, return all elements of the matrix in spiral order.
+<name>Spiral Matrix</name>
+<description>Given an m x n matrix, return all elements of the matrix in spiral order.
  
 Example 1:
 
@@ -19,18 +18,15 @@ Constraints:
 m == matrix.length
 n == matrix[i].length
 1 <= m, n <= 10
--100 <= matrix[i][j] <= 100
-</description>
-    <notes></notes>
-    <status>Completed</status>
-    <level>Medium</level>
-    <companies></companies>
-    <remarks>Revise Again</remarks>
-    <concepts></concepts>
-    <date>2026-05-26</date>
+-100 <= matrix[i][j] <= 100</description>
+<url>https://leetcode.com/problems/spiral-matrix/description/</url>
+<status>Completed</status>
+<remarks>Revise Again</remarks>
+<date>2026-05-26</date>
+<level>Medium</level>
+<companies>Jio:OYO:Zoho:Uber:Apple:Adobe:Wipro:Paytm:Cisco:Amazon:Google:Zillow:Oracle:Facebook:LiveRamp:JPMorgan:SAP Labs:Microsoft:Accenture:Cognizant:Salesforce:Browserstack</companies>
 </metadata>
 */
-
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         int up = 0;
