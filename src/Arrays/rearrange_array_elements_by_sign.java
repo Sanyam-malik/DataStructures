@@ -1,8 +1,7 @@
 /*
 <metadata>
-    <name>Rearrange Array Elements by Sign</name>
-    <url>https://leetcode.com/problems/rearrange-array-elements-by-sign/description/</url>
-    <description>You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.You should return the array of nums such that the array follows the given conditions:Every consecutive pair of integers have opposite signs.For all integers with the same sign, the order in which they were present in nums is preserved.The rearranged array begins with a positive integer.Return the modified array after rearranging the elements to satisfy the aforementioned conditions.
+<name>Rearrange Array Elements by Sign</name>
+<description>You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.You should return the array of nums such that the array follows the given conditions:Every consecutive pair of integers have opposite signs.For all integers with the same sign, the order in which they were present in nums is preserved.The rearranged array begins with a positive integer.Return the modified array after rearranging the elements to satisfy the aforementioned conditions.
 
 Example 1:
 
@@ -24,16 +23,13 @@ So nums is rearranged to [1,-1].
 Constraints:
 
 2 <= nums.length <= 2  105nums.length is even1 <= |nums[i]| <= 105nums consists of equal number of positive and negative integers.</description>
-    <notes></notes>
-    <status>Completed</status>
-    <level>Medium</level>
-    <companies></companies>
-    <remarks></remarks>
-    <concepts></concepts>
-    <date>2026-05-24</date>
+<url>https://leetcode.com/problems/rearrange-array-elements-by-sign/description/</url>
+<status>Completed</status>
+<date>2026-05-24</date>
+<level>Medium</level>
+<companies>Amazon</companies>
 </metadata>
 */
-
 class Solution {
     public int[] rearrangeArray(int[] nums) {
         int n = nums.length;
