@@ -31,6 +31,7 @@ Constraints:
 <status>Completed</status>
 <date>2026-05-13</date>
 <level>Easy</level>
+<companies>Adobe:Apple:Amazon:Google:Facebook:Bloomberg</companies>
 </metadata>
 */
 class Solution {
