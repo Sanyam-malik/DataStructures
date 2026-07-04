@@ -15,12 +15,15 @@ public class SortRunner {
             input[n] = Integer.parseInt(br.readLine());
         }
 
-        System.out.println("Enter Sort Type \n1. Bubble\n2. Selection\n3. Insertion");
+        System.out.println("Enter Sort Type \n1. Bubble\n2. Selection\n3. Insertion\n4.Merge\n5.Quick");
         int type = Integer.parseInt(br.readLine());
         SortType sortType = switch (type) {
             case 1 -> SortType.BUBBLE;
             case 2 -> SortType.SELECTION;
-            default -> SortType.INSERTION;
+            case 3 -> SortType.INSERTION;
+            case 4 -> SortType.MERGE;
+            case 5 -> SortType.QUICK;
+            default -> SortType.UNKNOWN;
         };
 
         Sort sort = SortFactory.getSortInstance(sortType);
