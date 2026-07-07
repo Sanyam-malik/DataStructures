@@ -1,22 +1,27 @@
 [
-    {
-        "name": "Codechef",
-        "url": "https://www.codechef.com",
-        "icon": "https://avatars.githubusercontent.com/u/11960354?v=4"
-    },
-    {
-        "name": "Codeforces",
-        "url": "https://codeforces.com",
-        "icon": "https://cdn.iconscout.com/icon/free/png-256/free-code-forces-logo-icon-svg-download-png-3029920.png"
-    },
-    {
-        "name": "Leetcode",
-        "url": "https://leetcode.com",
-        "icon": "https://cdn3d.iconscout.com/3d/free/thumb/free-leetcode-3d-icon-png-download-9325307.png"
-    },
-    {
-        "name": "GeeksforGeeks",
-        "url": "https://www.geeksforgeeks.org",
-        "icon": "https://geeksforgeeks.zohorecruit.in/recruit/viewCareerImage.do?page_id=61093000000211152&type=logo&file_name=GG_Logo.png"
-    }
+  {
+    "name" : "Codechef",
+    "url" : "https://www.codechef.com",
+    "icon" : "https://avatars.githubusercontent.com/u/11960354?v=4"
+  },
+  {
+    "name" : "Codeforces",
+    "url" : "https://codeforces.com",
+    "icon" : "https://cdn.iconscout.com/icon/free/png-256/free-code-forces-logo-icon-svg-download-png-3029920.png"
+  },
+  {
+    "name" : "GeeksforGeeks",
+    "url" : "https://www.geeksforgeeks.org",
+    "icon" : "https://geeksforgeeks.zohorecruit.in/recruit/viewCareerImage.do?page_id=61093000000211152&type=logo&file_name=GG_Logo.png"
+  },
+  {
+    "name" : "HackerEarth",
+    "url" : "https://www.hackerearth.com/",
+    "icon" : "https://upload.wikimedia.org/wikipedia/commons/e/e8/HackerEarth_logo.png"
+  },
+  {
+    "name" : "Leetcode",
+    "url" : "https://leetcode.com",
+    "icon" : "https://cdn3d.iconscout.com/3d/free/thumb/free-leetcode-3d-icon-png-download-9325307.png"
+  }
 ]
