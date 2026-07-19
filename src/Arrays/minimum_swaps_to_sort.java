@@ -17,46 +17,48 @@ Output: 0
 Explanation: Input array is already sorted.</description>
 <url>https://www.geeksforgeeks.org/problems/minimum-swaps/1</url>
 <status>Completed</status>
-<remarks>Cycle decomposition</remarks>
 <date>2026-07-19</date>
 <level>Medium</level>
 <companies>Microsoft</companies>
 </metadata>
 */
+import java.util.*;
+
 class Solution {
-    public int minSwaps(int nums[]) {
+    public int minSwaps(int[] nums) {
         int n = nums.length;
 
-        // Store value and original index
-        int[][] arr = new int[n][2];
+        int[] sorted = nums.clone();
+        Arrays.sort(sorted);
+
+        // value -> current index
+        HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < n; i++) {
-            arr[i][0] = nums[i];
-            arr[i][1] = i;
+            map.put(nums[i], i);
         }
 
-        // Sort according to values
-        Arrays.sort(arr, (a, b) -> Integer.compare(a[0], b[0]));
-
-        boolean[] visited = new boolean[n];
         int swaps = 0;
 
         for (int i = 0; i < n; i++) {
-            // Already visited or already at correct position
-            if (visited[i] || arr[i][1] == i) {
-                continue;
+            // nums[i] is not the element that should be here
+            if (nums[i] != sorted[i]) {
+
+                swaps++;
+
+                // Find where the correct element currently exists
+                int correctIndex = map.get(sorted[i]);
+
+                // Update position of nums[i]
+                map.put(nums[i], correctIndex);
+
+                // Put correct element at index i
+                nums[correctIndex] = nums[i];
+                nums[i] = sorted[i];
+
+                // Update position of correct element
+                map.put(sorted[i], i);
             }
-
-            int cycleSize = 0;
-            int j = i;
-
-            while (!visited[j]) {
-                visited[j] = true;
-                j = arr[j][1];
-                cycleSize++;
-            }
-
-            swaps += cycleSize - 1;
         }
 
         return swaps;
